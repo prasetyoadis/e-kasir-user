@@ -3,9 +3,9 @@ const toRegister = document.getElementById("toRegister");
 const toLogin = document.getElementById("toLogin");
 
 toRegister.addEventListener("click", () => {
-  container.classList.add("active");
+    container.classList.add("active");
 });
 
 toLogin.addEventListener("click", () => {
-  container.classList.remove("active");
+    container.classList.remove("active");
 });

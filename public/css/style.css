@@ -1,207 +1,387 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #e5e7eb, #c7d2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #e5e7eb, #c7d2fe);
 }
 
 /* =====================
    MAIN CONTAINER
 ===================== */
 .container {
-  width: 900px;
-  height: 520px;
-  background: #fff;
-  border-radius: 20px;
-  display: flex;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  position: relative;
+    width: 1300px;
+    height: 600px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 /* =====================
-   FORM SECTION
+   FORM STRUCTURE
 ===================== */
 .form-wrapper {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.6s ease;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s ease;
 }
 
 .form-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.6s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
 }
 
 .form-container form {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .form-container h1 {
-  margin-bottom: 20px;
-  font-size: 28px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
-.form-container input {
-  width: 100%;
-  padding: 12px 14px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: none;
-  background: #f1f5f9;
-  font-size: 14px;
-  outline: none;
+/* =====================
+   INPUTS & VALIDATION
+   (Bagian ini dimodifikasi untuk Alert)
+===================== */
+.input-control {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px; /* Jarak antar input diperlebar untuk pesan error */
+    text-align: left;
 }
 
+.input-control input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 0;
+    border-radius: 8px;
+    border: 2px solid #f1f5f9; /* Border default */
+    background: #f1f5f9;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+/* State: ERROR (Merah) */
+.input-control.error input {
+    border-color: #e74c3c;
+    background-color: #fff;
+}
+
+.input-control.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+/* State: SUCCESS (Hijau) */
+.input-control.success input {
+    border-color: #2ecc71;
+    background-color: #fff;
+}
+
+/* Pesan Error Kecil */
+.input-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: -18px; /* Muncul di bawah input */
+    left: 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =====================
+   WHATSAPP GROUP
+===================== */
+.phone-group {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-group select {
+    width: 30%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #f1f5f9;
+    background: #f1f5f9;
+    outline: none;
+    cursor: pointer;
+}
+
+/* =====================
+   BUTTONS & LINKS
+===================== */
 .form-container a {
-  display: inline-block;
-  margin: 10px 0;
-  font-size: 13px;
-  color: #475569;
-  text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #475569;
+    text-decoration: none;
 }
 
 .form-container button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 12px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .form-container button:hover {
-  background: #1d4ed8;
+    background: #1d4ed8;
 }
 
-/* =====================
-   FORM STATE
-===================== */
-.sign-in {
-  transform: translateX(0);
-  opacity: 1;
-  z-index: 2;
+/* Google Login */
+.google-login {
+    margin: 15px 0;
+    text-align: center;
 }
 
-.sign-up {
-  transform: translateX(100%);
-  opacity: 0;
-  z-index: 1;
+.google-login p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-/* Saat active */
-.container.active .sign-in {
-  transform: translateX(-100%);
-  opacity: 0;
+.google-login p::before,
+.google-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #ddd;
+}
+.google-login p::before {
+    left: 0;
+}
+.google-login p::after {
+    right: 0;
 }
 
-.container.active .sign-up {
-  transform: translateX(0);
-  opacity: 1;
-  z-index: 2;
+.form-container .btn-google {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: background 0.3s;
 }
 
-.container.active .form-wrapper {
-  transform: translateX(100%);
+.btn-google img {
+    width: 18px;
+}
+.form-container .btn-google:hover {
+    background-color: #f7f7f7;
 }
 
-/* =====================
-   SWITCH TEXT
-===================== */
+/* Switch Text (Sign In / Sign Up) */
 .switch {
-  margin-top: 15px;
-  font-size: 14px;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
 .switch span {
-  color: #2563eb;
-  font-weight: 600;
-  cursor: pointer;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 /* =====================
-   RIGHT PANEL
+   SLIDING ANIMATION LOGIC
 ===================== */
-.right-panel {
-  width: 50%;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.6s ease;
+.sign-in {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.sign-up {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Saat Container Active (Mode Register) */
+.container.active .sign-in {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.container.active .sign-up {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.container.active .form-wrapper {
+    transform: translateX(100%);
 }
 
 .container.active .right-panel {
-  transform: translateX(-100%);
-}
-
-.panel-content {
-  padding: 40px;
-  text-align: center;
-}
-
-.panel-content img {
-  width: 100%;
-  max-width: 320px;
-  margin-bottom: 20px;
-}
-
-.panel-content h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.panel-content p {
-  font-size: 14px;
-  opacity: 0.9;
+    transform: translateX(-100%);
 }
 
 /* =====================
-   RESPONSIVE
+   RIGHT PANEL (BLUE)
+===================== */
+.right-panel {
+    width: 50%;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s ease;
+}
+
+.panel-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.panel-content img {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 20px;
+}
+
+.panel-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.panel-content p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* =====================
+   RESPONSIVE (MOBILE)
 ===================== */
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-    height: auto;
-    flex-direction: column;
-  }
+    .container {
+        width: 90%;
+        height: 100%;
+        min-height: 500px;
+        flex-direction: column-reverse; /* Form di atas, Panel biru di bawah */
+        overflow-y: auto;
+    }
 
-  .form-wrapper,
-  .right-panel {
-    width: 100%;
-  }
+    .form-wrapper,
+    .right-panel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 
-  .right-panel {
-    transform: none !important;
-    padding: 30px 0;
-  }
+    .form-wrapper {
+        min-height: 500px; /* Ruang untuk form */
+    }
 
-  .form-container {
-    position: relative;
-    transform: none !important;
-    opacity: 1 !important;
-  }
+    .form-container {
+        padding: 30px;
+        position: absolute;
+    }
+
+    /* Reset Transform di Mobile agar tidak berantakan */
+    .container.active .form-wrapper {
+        transform: none;
+    }
+    .right-panel {
+        transform: none !important;
+        height: 200px;
+        padding: 20px;
+    }
+    .container.active .right-panel {
+        transform: none;
+    }
+
+    /* Logic Tampilan Mobile: Gunakan opacity/z-index saja tanpa geser */
+    .sign-in,
+    .sign-up {
+        transition: opacity 0.4s ease;
+        top: 0;
+        left: 0;
+    }
+
+    .sign-up {
+        opacity: 0;
+        pointer-events: none;
+        transform: none;
+    }
+    .sign-in {
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+    }
+
+    .container.active .sign-in {
+        opacity: 0;
+        pointer-events: none;
+        transform: none;
+    }
+    .container.active .sign-up {
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+    }
+
+    .panel-content img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+    .panel-content h2 {
+        font-size: 18px;
+    }
+    .panel-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container h1 {
+        font-size: 24px;
+    }
+    .form-container {
+        padding: 20px;
+    }
+
+    .phone-group select {
+        width: 35%;
+    }
 }
