@@ -93,9 +93,9 @@
 
         <div class="right-panel">
             <div class="panel-content">
-                <img src="asset/img/dashboard.webp" alt="Dashboard" />
-                <h2>The easiest way to manage your portfolio</h2>
-                <p>Join the Conto community now</p>
+                <img src="asset/img/logo-kasia.png" alt="Dashboard" />
+                <h2>The easiest way to manage your transaction</h2>
+                <p>Simple cashier for your business</p>
             </div>
         </div>
     </div>

@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+:root {
+    --color-warm-white: #fffef9;
+    --color-gold: #f4c430;
+    --color-leaf-green: #6b8e43;
+    --color-earth-brown: #8b7e66;
+    --color-deep-dark: #2f2f2a;
+    --color-clay-red: #c2433d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +21,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #e5e7eb, #c7d2fe);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?cs=srgb&dl=pexels-fotios-photos-1833586.jpg&fm=jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /* =====================
@@ -143,7 +155,7 @@ body {
     margin-top: 10px;
     width: 100%;
     padding: 12px;
-    background: #2563eb;
+    background: #e3b862;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -153,7 +165,7 @@ body {
 }
 
 .form-container button:hover {
-    background: #1d4ed8;
+    background: var(--color-gold);
 }
 
 /* Google Login */
@@ -261,7 +273,7 @@ body {
 ===================== */
 .right-panel {
     width: 50%;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    background: linear-gradient(120deg, #5d5d5d, var(--color-earth-brown));
     color: #fff;
     display: flex;
     align-items: center;
@@ -293,11 +305,14 @@ body {
 /* =====================
    RESPONSIVE (MOBILE)
 ===================== */
+/* =====================
+   RESPONSIVE (MOBILE)
+===================== */
 @media (max-width: 768px) {
     .container {
         width: 90%;
-        height: 100%;
-        min-height: 500px;
+        height: auto;
+        /* min-height: 500px; */
         flex-direction: column-reverse; /* Form di atas, Panel biru di bawah */
         overflow-y: auto;
     }
@@ -310,7 +325,7 @@ body {
     }
 
     .form-wrapper {
-        min-height: 500px; /* Ruang untuk form */
+        min-height: 565px; /* Ruang untuk form */
     }
 
     .form-container {
@@ -324,7 +339,7 @@ body {
     }
     .right-panel {
         transform: none !important;
-        height: 200px;
+        height: auto;
         padding: 20px;
     }
     .container.active .right-panel {
@@ -362,7 +377,7 @@ body {
     }
 
     .panel-content img {
-        max-width: 150px;
+        max-width: 250px;
         margin-bottom: 10px;
     }
     .panel-content h2 {
@@ -374,6 +389,13 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 16px 0;
+    }
+    .panel-content {
+        padding: 0;
+    }
     .form-container h1 {
         font-size: 24px;
     }
