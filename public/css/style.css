@@ -24,16 +24,16 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?cs=srgb&dl=pexels-fotios-photos-1833586.jpg&fm=jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 50% 75%;
 }
 
 /* =====================
    MAIN CONTAINER
 ===================== */
 .container {
-    width: 1300px;
+    width: 1200px;
     height: 600px;
-    background: #fff;
+    background: var(--color-warm-white);
     border-radius: 20px;
     display: flex;
     overflow: hidden;

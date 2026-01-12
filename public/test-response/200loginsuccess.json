@@ -4,17 +4,19 @@
     "statusDescription": "Request processed successfully",
     "result": {
         "data" : {
-            "access_token": "stringToken",
-            "token_type": "bearer",
-            "expired_at": 72000,
+            "token" : {
+                "access_token": "stringToken",
+                "token_type": "bearer",
+                "expired_at": 72000
+            },
             "user": {
                 "id": "f8b228a7-03e7-491d-ba48-c6ec625bb335",
                 "roles": [
                     "owner"
                 ],
                 "flags": {
-                    "has_subscription": false,
-                    "has_outlet": false
+                    "has_subscription": true,
+                    "has_outlet": true
                 }
             }
         }

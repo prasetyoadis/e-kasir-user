@@ -1,0 +1,8 @@
+{
+    "statusCode": 200,
+    "statusMessage": "OK",
+    "statusDescription": "Request processed successfully",
+    "result": {
+        "successMessage": "Log out successfully"
+    }
+}

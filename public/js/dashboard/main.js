@@ -1,13 +1,27 @@
+const token = localStorage.getItem('token');
+const formLogout = document.getElementById('formLogout');
+
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
+    if(localStorage.getItem('is_logged_in') === 'false'){
+        window.location.href = '/login';
+    }
+    try {        
         const response = await fetch('test-response/current-user-owner.json');
-    
+        
+        // const response = await fetch('http://192.168.43.6:8080/api/users/current', {
+        //     method: 'GET',
+        //     headers: {
+        //         'Authorization': `Bearer ${token}`,
+        //         'Accept': 'application/json'
+        //     }
+        // })
+
         if (!response.statusCode === 200) {
             throw new Error('Gagal load user data');
         }
     
-        const dataResult = await response.json();
-        const dataUser = dataResult.result.data;
+        const resultResponse = await response.json();
+        const dataUser = resultResponse.result.data;
     
         console.log('Loaded user:', dataUser);
     
@@ -23,10 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } else {
             dashboard.innerHTML = `<p style="color: red; font-size: 2rem; font-weight: bold; text-align: center;">403 Forbidden<br>Access denied user is not active</p>`
-        }
-        
-        if (!dataUser) {
-            window.location.href = '/login';
         }
     
     } catch (err) {
@@ -47,7 +57,7 @@ const menuPermissionMap = {
         base: 'product',
         permissions: ['product.*', 'product.view', 'product.update']
     },
-    inventory: {
+    inventories: {
         base: 'inventory',
         permissions: ['inventory.*', 'inventory.view', 'inventory.update']
     },
@@ -153,3 +163,9 @@ function applyUserPrivilege(user) {
     userSlug.textContent = roleUser.slug;
     userAccess.textContent = permissionUser.join(', ');
 }
+
+formLogout.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    await logoutUser(token);
+});
