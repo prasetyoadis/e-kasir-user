@@ -14,19 +14,23 @@
     <div class="pos-container">
 
         <header class="pos-header">
-            <div class="brand">
-                <div class="logo">K</div>
-                <div class="brand-info">
-                    <h1>Kanssia</h1>
-                    <span id="current-date">Sabtu, 7 Januari 2024</span>
-                </div>
-            </div>
+    <div class="brand">
+        <div class="logo">K</div>
+        <div class="brand-info">
+            <h1>Kassia</h1>
+            <span id="current-date">Sabtu, 7 Januari 2024</span>
+        </div>
+    </div>
 
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search menu...">
-            </div>
-        </header>
+    <div class="header-center">
+        <img src="../asset/img/logo-kasia.png" alt="Center Logo" class="center-logo">
+    </div>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search menu...">
+    </div>
+</header>
 
         <main class="pos-content">
 

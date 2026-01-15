@@ -7,7 +7,7 @@
     --color-deep-dark: #2f2f2a;
     --color-clay-red: #c2433d;
     --bg-gray: #f4f6f8;
-    --shadow-card: 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
     --border-radius: 12px;
 }
 
@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
     z-index: 10;
 }
 
@@ -52,7 +52,7 @@ body {
 .brand .logo {
     width: 40px;
     height: 40px;
-    background: var(--color-gold);
+    background-color: var(--color-earth-brown);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -70,6 +70,20 @@ body {
 .brand-info span {
     font-size: 0.8rem;
     color: #888;
+}
+
+/* Mengatur agar bagian tengah benar-benar presisi di tengah */
+.header-center {
+    flex: 1; /* Memberikan ruang fleksibel */
+    display: flex;
+    justify-content: center; /* Memastikan isi div ini berada di tengah */
+}
+
+.center-logo {
+    background-color: var(--color-earth-brown);
+    height: 40px; /* Sesuaikan ukuran logo tengah Anda */
+    width: auto;
+    border-radius: 50px;
 }
 
 .search-bar {
@@ -136,7 +150,8 @@ body {
     font-size: 0.95rem;
 }
 
-.sidebar-category li:hover, .sidebar-category li.active {
+.sidebar-category li:hover,
+.sidebar-category li.active {
     background-color: #fff8e1; /* Light yellow */
     color: var(--color-deep-dark);
     font-weight: 600;
@@ -371,7 +386,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
 }
@@ -381,7 +396,7 @@ body {
     padding: 25px;
     border-radius: 16px;
     width: 400px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     animation: slideUp 0.3s ease;
 }
 
@@ -391,8 +406,13 @@ body {
     margin-bottom: 20px;
 }
 
-.text-gold { color: var(--color-gold); }
-.text-lg { font-size: 1.5rem; font-weight: bold; }
+.text-gold {
+    color: var(--color-gold);
+}
+.text-lg {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
 .payment-methods {
     display: flex;
@@ -416,8 +436,14 @@ body {
     font-weight: bold;
 }
 
-.form-group { margin-bottom: 15px; }
-.form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; }
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
 .input-lg {
     width: 100%;
     padding: 10px;
@@ -499,5 +525,23 @@ body {
 }
 
 /* Keyframes */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
