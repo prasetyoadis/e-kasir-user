@@ -13,3 +13,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+
+Route::get('/dashboard/kasir', function () {
+    return view('dashboard.kasir.index');
+});

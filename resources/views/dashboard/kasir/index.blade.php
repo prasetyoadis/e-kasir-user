@@ -15,7 +15,7 @@
 
         <aside class="sidebar" id="sidebar">
             <div class="brand">
-                <i class="fas fa-store"></i> <span class="brand-text">MY POS</span>
+                <img src="../asset/img/logo-kasia.png"/> <span class="brand-text">Kassia</span>
                 <button class="close-sidebar-btn" onclick="toggleSidebar()">
                     <i class="fas fa-times"></i>
                 </button>

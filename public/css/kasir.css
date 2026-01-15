@@ -1,13 +1,23 @@
 /* --- RESET & GLOBAL --- */
+
+:root {
+    --color-warm-white: #fffef9;
+    --color-gold: #f4c430;
+    --color-leaf-green: #6b8e43;
+    --color-earth-brown: #8b7e66;
+    --color-deep-dark: #2f2f2a;
+    --color-clay-red: #c2433d;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
-    background-color: #f4f6f9;
+    background-color: var(--color-warm-white);
     color: #333;
     overflow: hidden; /* Mencegah scroll pada body utama */
     height: 100vh;
@@ -23,7 +33,7 @@ body {
 /* --- SIDEBAR --- */
 .sidebar {
     width: 250px;
-    background-color: #343a40; /* Dark Sidebar */
+    background: linear-gradient(120deg, #414141, var(--color-earth-brown));
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -38,12 +48,22 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     border-bottom: 1px solid #4b545c;
-    background-color: #343a40;
+    background: linear-gradient(120deg, var(--color-deep-dark), #414141);
 }
 
-.brand i { margin-right: 10px; color: #3498db; }
+.brand img {
+    width: 50px;
+    height: 50px;
+}
 
-.nav-menu { padding: 10px; }
+.brand i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.nav-menu {
+    padding: 10px;
+}
 
 .nav-item {
     display: block;
@@ -55,12 +75,17 @@ body {
     transition: 0.2s;
 }
 
-.nav-item:hover, .nav-item.active {
-    background-color: #007bff;
+.nav-item:hover,
+.nav-item.active {
+    background-color: var(--color-gold);
     color: #fff;
 }
 
-.nav-item i { width: 25px; text-align: center; margin-right: 5px; }
+.nav-item i {
+    width: 25px;
+    text-align: center;
+    margin-right: 5px;
+}
 
 /* --- MAIN CONTENT --- */
 .main-content {
@@ -84,20 +109,42 @@ body {
     flex-shrink: 0;
 }
 
-.top-header h2 { font-size: 1.2rem; color: #444; }
+.top-header h2 {
+    font-size: 1.2rem;
+    color: #444;
+}
 
-.user-profile { display: flex; align-items: center; gap: 20px; }
-.notification-icon { color: #6c757d; font-size: 1.1rem; cursor: pointer; }
-.user-info { display: flex; align-items: center; gap: 10px; }
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.notification-icon {
+    color: #6c757d;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .avatar {
-    width: 35px; height: 35px;
+    width: 35px;
+    height: 35px;
     background-color: #17a2b8;
     color: white;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
-.name { font-size: 0.9rem; font-weight: 600; }
+.name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
 /* --- SCROLLABLE AREA (Input + Table) --- */
 .content-scrollable {
@@ -120,16 +167,35 @@ body {
     padding: 15px;
     border-top: 3px solid #d2d6de;
     border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card.highlight-card { border-top-color: #007bff; } /* Biru */
-.card.invoice-card { border-top-color: #007bff; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
+.card.highlight-card {
+    border-top-color: #d2d6de;
+} /* Biru */
+.card.invoice-card {
+    border-top-color: #d2d6de;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-.form-group { margin-bottom: 10px; }
-.form-group label { display: block; font-size: 0.75rem; font-weight: bold; color: #666; text-transform: uppercase; margin-bottom: 5px; }
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #ced4da;
@@ -137,60 +203,144 @@ input, select, textarea {
     font-size: 0.9rem;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
     border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.readonly { background-color: #e9ecef; cursor: not-allowed; }
+.readonly {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
 
 /* Group Input Search */
-.input-group { display: flex; }
-.input-group input { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.input-group {
+    display: flex;
+}
+.input-group input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 .btn-search {
-    background: #e9ecef; border: 1px solid #ced4da; border-left: 0;
-    padding: 0 15px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; cursor: pointer;
+    background: #e9ecef;
+    border: 1px solid #ced4da;
+    border-left: 0;
+    padding: 0 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
 }
 
 /* Group Qty & Button */
-.row-group { display: flex; gap: 10px; align-items: flex-end; }
-.qty-group { width: 80px; margin-bottom: 0; }
-.qty-group input { text-align: center; font-weight: bold; }
+.row-group {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+.qty-group {
+    width: 80px;
+    margin-bottom: 0;
+}
+.qty-group input {
+    text-align: center;
+    font-weight: bold;
+}
 
 .btn-add {
     flex-grow: 1;
-    background-color: #007bff; color: white;
-    border: none; padding: 9px; border-radius: 4px;
-    font-weight: bold; cursor: pointer; transition: 0.2s;
+    background-color: #91ba62;
+    color: white;
+    border: none;
+    padding: 9px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
 }
-.btn-add:hover { background-color: #0069d9; }
+.btn-add:hover {
+    background-color: var(--color-leaf-green);
+}
 
 /* Invoice & Big Total */
-.invoice-info .label { font-size: 0.8rem; color: #888; display: block; }
-.invoice-info .value { font-weight: bold; font-family: monospace; font-size: 1rem; }
+.invoice-info .label {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+}
+.invoice-info .value {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1rem;
+}
 
-.grand-total-display .label { font-size: 0.8rem; color: #888; display: block; }
-.grand-total-display .value { font-size: 2.5rem; font-weight: bold; color: #007bff; line-height: 1; }
+.grand-total-display .label {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+}
+.grand-total-display .value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-leaf-green);
+    line-height: 1;
+}
 
 /* --- TABLE SECTION --- */
 .table-section {
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-.pos-table { width: 100%; border-collapse: collapse; }
-.pos-table th, .pos-table td { padding: 12px 15px; border-bottom: 1px solid #eee; text-align: left; font-size: 0.9rem; }
-.pos-table th { background-color: #f8f9fa; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; color: #555; position: sticky; top: 0; }
-.pos-table .text-right { text-align: right; }
-.pos-table .text-center { text-align: center; }
+.pos-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.pos-table th,
+.pos-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.pos-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #555;
+    position: sticky;
+    top: 0;
+}
+.pos-table .text-right {
+    text-align: right;
+}
+.pos-table .text-center {
+    text-align: center;
+}
 
 /* Buttons in table */
-.btn-edit, .btn-delete { border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; margin: 0 2px; }
-.btn-edit { background: #e0f2f1; color: #00897b; }
-.btn-delete { background: #ffebee; color: #c62828; }
+.btn-edit,
+.btn-delete {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin: 0 2px;
+}
+.btn-edit {
+    background: #e0f2f1;
+    color: #00897b;
+}
+.btn-delete {
+    background: #ffebee;
+    color: #c62828;
+}
 
 /* --- PAYMENT FOOTER (Design sesuai Request) --- */
 .payment-footer {
@@ -198,7 +348,7 @@ input:focus, select:focus, textarea:focus {
     border-top: 1px solid #dee2e6;
     padding: 15px 20px;
     flex-shrink: 0; /* Mencegah footer mengecil */
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .footer-grid {
@@ -208,44 +358,114 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* Kolom 1: Total Text */
-.row-between { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem; }
-.row-between.grand-row { border-top: 1px solid #eee; margin-top: 8px; padding-top: 8px; font-size: 1.1rem; }
-.bold { font-weight: bold; }
-.text-red { color: #dc3545; }
-.text-blue { color: #007bff; }
+.row-between {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+.row-between.grand-row {
+    border-top: 1px solid #eee;
+    margin-top: 8px;
+    padding-top: 8px;
+    font-size: 1.1rem;
+}
+.bold {
+    font-weight: bold;
+}
+.text-red {
+    color: #dc3545;
+}
+.text-blue {
+    color: var(--color-leaf-green);
+}
 
 /* Kolom 2: Inputs */
-.input-row { display: flex; align-items: center; margin-bottom: 10px; }
-.input-row label { width: 100px; font-weight: 600; font-size: 0.9rem; }
-.input-row input { font-weight: bold; text-align: right; font-size: 1.1rem; }
-#cash_input { border: 2px solid #adb5bd; }
-#cash_input:focus { border-color: #28a745; } /* Hijau saat fokus */
-#change_input { background: #f8f9fa; border: 1px solid #ced4da; color: #495057; }
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input-row label {
+    width: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.input-row input {
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.1rem;
+}
+#cash_input {
+    border: 2px solid #adb5bd;
+}
+#cash_input:focus {
+    border-color: #28a745;
+} /* Hijau saat fokus */
+#change_input {
+    background: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #495057;
+}
 
 /* Kolom 3: Actions */
-.actions-col { display: flex; flex-direction: column; justify-content: space-between; }
-#txn_note { height: 38px; margin-bottom: 10px; resize: none; font-size: 0.85rem; }
-
-.btn-group { display: flex; gap: 10px; }
-.btn-cancel, .btn-process {
-    flex: 1; border: none; color: white; padding: 10px;
-    border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 1rem;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
+.actions-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.btn-cancel { background-color: #e0020d; color: #212529; } /* Kuning */
-.btn-cancel:hover { background-color: #e0020d; }
-.btn-process { background-color: #28a745; } /* Hijau */
-.btn-process:hover { background-color: #218838; }
+#txn_note {
+    height: 38px;
+    margin-bottom: 10px;
+    resize: none;
+    font-size: 0.85rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+.btn-cancel,
+.btn-process {
+    flex: 1;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.btn-cancel {
+    background-color: #e0020d;
+} /* Kuning */
+.btn-cancel:hover {
+    background-color: #e0020d;
+}
+.btn-process {
+    background-color: var(--color-leaf-green);
+} /* Hijau */
+.btn-process:hover {
+    background-color: var(--color-leaf-green);
+}
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
-    .input-section { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 15px; }
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
 /* --- STYLE SEBELUMNYA TETAP SAMA (Desktop First) --- */
 /* ... Paste CSS desktop dari jawaban sebelumnya di sini ... */
-
 
 /* =========================================
    RESPONSIVE MEDIA QUERIES
@@ -258,13 +478,24 @@ input:focus, select:focus, textarea:focus {
         width: 70px;
         transition: width 0.3s;
     }
-    .brand-text, .nav-text {
+    .brand-text,
+    .nav-text {
         display: none; /* Sembunyikan teks menu */
     }
-    .brand { justify-content: center; }
-    .brand i { margin-right: 0; }
-    .nav-item { text-align: center; padding: 15px 5px; }
-    .nav-item i { margin-right: 0; font-size: 1.2rem; }
+    .brand {
+        justify-content: center;
+    }
+    .brand i {
+        margin-right: 0;
+    }
+    .nav-item {
+        text-align: center;
+        padding: 15px 5px;
+    }
+    .nav-item i {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
 
     /* Input Section Grid menyesuaikan */
     .input-section {
@@ -284,7 +515,6 @@ input:focus, select:focus, textarea:focus {
 
 /* --- 2. MOBILE & ANDROID SMALL SCREEN (Max 768px) --- */
 @media (max-width: 768px) {
-
     /* Global Layout Mobile */
     .app-container {
         position: relative;
@@ -296,13 +526,25 @@ input:focus, select:focus, textarea:focus {
         padding: 0 10px;
         height: 50px;
     }
-    .top-header h2 { font-size: 1rem; margin-left: 10px; }
-    .user-info .name { display: none; } /* Sembunyikan nama admin di HP */
+    .top-header h2 {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+    .user-info .name {
+        display: none;
+    } /* Sembunyikan nama admin di HP */
     .mobile-menu-btn {
         display: block; /* Munculkan tombol hamburger */
-        background: none; border: none; font-size: 1.2rem; color: #333; cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: #333;
+        cursor: pointer;
     }
-    .header-left { display: flex; align-items: center; }
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
 
     /* SIDEBAR MOBILE (Off-Canvas) */
     .sidebar {
@@ -317,43 +559,74 @@ input:focus, select:focus, textarea:focus {
     .sidebar.active {
         left: 0; /* Muncul saat aktif */
     }
-    .brand-text, .nav-text { display: inline; } /* Tampilkan teks lagi */
-    .brand { justify-content: space-between; padding: 0 20px; }
-    .nav-item { text-align: left; padding: 12px 15px; }
-    .nav-item i { margin-right: 10px; }
+    .brand-text,
+    .nav-text {
+        display: inline;
+    } /* Tampilkan teks lagi */
+    .brand {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .nav-item {
+        text-align: left;
+        padding: 12px 15px;
+    }
+    .nav-item i {
+        margin-right: 10px;
+    }
 
     .close-sidebar-btn {
         display: block; /* Tombol X muncul */
-        background: none; border: none; color: white; font-size: 1.2rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
     }
 
     /* Overlay background saat menu buka */
     .sidebar-overlay {
         display: none;
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.5); z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
     }
-    .sidebar-overlay.active { display: block; }
+    .sidebar-overlay.active {
+        display: block;
+    }
 
     /* INPUT SECTION STACK */
-    .content-scrollable { padding: 10px; }
+    .content-scrollable {
+        padding: 10px;
+    }
     .input-section {
         grid-template-columns: 1fr; /* 1 Kolom ke bawah */
         gap: 10px;
     }
-    .card { padding: 10px; }
-    .grand-total-display .value { font-size: 2rem; } /* Kecilkan font total */
+    .card {
+        padding: 10px;
+    }
+    .grand-total-display .value {
+        font-size: 2rem;
+    } /* Kecilkan font total */
 
     /* TABLE MOBILE */
     .table-section {
         overflow-x: auto; /* Scroll samping jika tabel lebar */
     }
-    .pos-table th, .pos-table td {
+    .pos-table th,
+    .pos-table td {
         padding: 8px 5px;
         font-size: 0.8rem;
     }
     /* Sembunyikan kolom kurang penting di HP Vertical */
-    .pos-table th:nth-child(2), .pos-table td:nth-child(2) { display: none; } /* Hide Barcode */
+    .pos-table th:nth-child(2),
+    .pos-table td:nth-child(2) {
+        display: none;
+    } /* Hide Barcode */
 
     /* FOOTER MOBILE (Stack Vertical) */
     .payment-footer {
@@ -368,20 +641,49 @@ input:focus, select:focus, textarea:focus {
     }
 
     /* Atur urutan tampilan di footer mobile */
-    .totals-col { order: 1; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
-    .inputs-col { order: 2; }
-    .actions-col { order: 3; }
+    .totals-col {
+        order: 1;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 5px;
+    }
+    .inputs-col {
+        order: 2;
+    }
+    .actions-col {
+        order: 3;
+    }
 
-    .row-between { font-size: 0.8rem; }
-    .row-between.grand-row { font-size: 1rem; }
+    .row-between {
+        font-size: 0.8rem;
+    }
+    .row-between.grand-row {
+        font-size: 1rem;
+    }
 
-    .input-row label { width: 80px; font-size: 0.8rem; }
-    .input-row input { padding: 5px; font-size: 1rem; }
+    .input-row label {
+        width: 80px;
+        font-size: 0.8rem;
+    }
+    .input-row input {
+        padding: 5px;
+        font-size: 1rem;
+    }
 
-    .btn-group { margin-top: 5px; }
-    .btn-cancel, .btn-process { padding: 8px; font-size: 0.9rem; }
-    #txn_note { display: none; } /* Sembunyikan note di HP agar muat */
+    .btn-group {
+        margin-top: 5px;
+    }
+    .btn-cancel,
+    .btn-process {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    #txn_note {
+        display: none;
+    } /* Sembunyikan note di HP agar muat */
 }
 
 /* Default state untuk elemen mobile di Desktop */
-.mobile-menu-btn, .close-sidebar-btn { display: none; }
+.mobile-menu-btn,
+.close-sidebar-btn {
+    display: none;
+}
