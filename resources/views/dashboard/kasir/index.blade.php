@@ -173,7 +173,7 @@
 
     </div>
 
-    <script src="{{ asset('js/pos-logic.js') }}"></script>
+    <script src="{{ asset('js/dashboard/kasir/pos-logic.js') }}"></script>
 
     <script>
         // Toggle Sidebar khusus Mobile
