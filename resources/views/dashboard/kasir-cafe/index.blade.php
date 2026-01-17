@@ -119,7 +119,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/kasir-cafe.js') }}"></script>
+    <script src="{{ asset('js/dashboard/kasir/kasir-cafe.js') }}"></script>
 </body>
 
 </html>

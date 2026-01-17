@@ -1,7 +1,7 @@
 async function loginUser(email, password) {
     try {
         const isSuccess = true;
-        const url = isSuccess ? 'test-response/200loginsuccess.json' : 'test-response/401unauthorized.json';
+        const url = isSuccess ? 'test-response/auth/200loginsuccess.json' : 'test-response/failed/401unauthorized.json';
         
         // simulasi login → fetch ke file JSON statis
         const response = await fetch(url);
