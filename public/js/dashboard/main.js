@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.href = '/login';
     }
     try {        
-        const response = await fetch('test-response/current-user-owner.json');
+        const response = await fetch('test-response/dashboard/current-user-owner.json');
         
         // const response = await fetch('http://192.168.43.6:8080/api/users/current', {
         //     method: 'GET',
