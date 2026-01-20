@@ -1,0 +1,17 @@
+{
+    "statusCode": 422,
+    "statusMessage": "Unprocessable Entity",
+    "statusDescription": "Validation failed",
+    "result": {
+        "errorCode": "21",
+        "errorMessage": "Validation failed",
+        "errors": {
+            "email": [
+                "The email field must be a valid email address"
+            ],
+            "password": [
+                "The password field minimum 8 characters"
+            ] 
+        }
+    }
+}

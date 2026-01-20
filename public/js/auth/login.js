@@ -1,7 +1,9 @@
-async function loginUser(email, password) {
+import { handleApiError } from '../errors/handleApiError.js';
+
+export async function loginUser(email, password) {
     try {
-        const isSuccess = true;
-        const url = isSuccess ? 'test-response/auth/200loginsuccess.json' : 'test-response/failed/401unauthorized.json';
+        const isSuccess = false;
+        const url = isSuccess ? 'test-response/success/auth/login/200-login-success.json' : 'test-response/failed/auth/login/403-account-inactive.json';
         
         // simulasi login → fetch ke file JSON statis
         const response = await fetch(url);
@@ -20,24 +22,44 @@ async function loginUser(email, password) {
         const resultResponse = await response.json();
         console.log('Loaded data:', resultResponse);
 
-        if (resultResponse.statusCode === 401) {
-            showLoginError(document.getElementById("loginEmail"), "Email atau password salah");
-            showLoginError(document.getElementById("loginPassword"), "Email atau password salah");
-            return
-        }
-        if (resultResponse.statusCode === 200) {
-            // ambil data user
-            const data = resultResponse.result.data;
+        switch (resultResponse.statusCode) {
+            case 401:
+                handleApiError(resultResponse.result.errorCode);
 
-            // simpan ke localStorage (simulasi login sukses)
-            localStorage.setItem('token', data.token.access_token);
-            localStorage.setItem('current_user', JSON.stringify(data.user));
-            localStorage.setItem('is_logged_in', 'true');
+                showLoginError(document.getElementById("loginEmail"), "Email atau password salah");
+                showLoginError(document.getElementById("loginPassword"), "Email atau password salah");
+                break;
+            case 403:
+                handleApiError(resultResponse.result.errorCode);
+    
+                showLoginError(document.getElementById("loginEmail"), "");
+                showLoginError(document.getElementById("loginPassword"), "");
+                break;
+            case 429:
+                handleApiError(resultResponse.result.errorCode);
+    
+                showLoginError(document.getElementById("loginEmail"), "");
+                showLoginError(document.getElementById("loginPassword"), "");
+                break;
+            case 200:
+                // ambil data user
+                const data = resultResponse.result.data;
 
-            console.log('Login sukses:', data);
+                // simpan ke localStorage (simulasi login sukses)
+                localStorage.setItem('token', data.token.access_token);
+                localStorage.setItem('current_user', JSON.stringify(data.user));
+                localStorage.setItem('is_logged_in', 'true');
 
-            // redirect ke dashboard
-            window.location.href = '/dashboard';   
+                console.log('Login sukses:', data);
+
+                // redirect ke dashboard
+                window.location.href = '/dashboard';  
+                break;
+        
+            default:
+                console.warn('Unhandled status code:', resultResponse.statusCode);
+                handleApiError(resultResponse?.result?.errorCode);
+                break;
         }
     } catch (err) {
         console.error(err);
