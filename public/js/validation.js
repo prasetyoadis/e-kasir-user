@@ -1,3 +1,6 @@
+import { loginUser } from './auth/login.js';
+import { registerUser } from './auth/register.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     // --- AMBIL ELEMEN LOGIN ---
     const formLogin = document.getElementById("formLogin");
@@ -42,9 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         formLogin.addEventListener("submit", async (e) => {
             e.preventDefault(); // Stop jika error
             // Cek validasi Login
-            if (checkLoginInputs()) {
-                await loginUser(loginEmail.value, loginPassword.value);
-            }
+            if (!checkLoginInputs()) return;
+            await loginUser(loginEmail.value, loginPassword.value);
         });
     }
 
@@ -77,11 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // LOGIC REGISTER
     // ============================
     if (formRegister) {
-        formRegister.addEventListener("submit", (e) => {
-            // Cek validasi Register
-            if (!checkRegisterInputs()) {
-                e.preventDefault();
-            }
+        formRegister.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Stop jika error
+            // Cek validasi Login
+            if (!checkRegisterInputs()) return;
+            
+            await registerUser(regName.value, regUsername.value, regEmail.value, regPhone.value, regPassword.value);
         });
     }
 

@@ -3,7 +3,7 @@
     "statusMessage": "Unexpected server error",
     "statusDescription": "Unexpected error occurred on the server",
     "result": {
-        "errorCode": "71",
-        "errorMessage": "Internal system error"
+        "errorCode": "41",
+        "errorMessage": "Failed to create data"
     }
 }
