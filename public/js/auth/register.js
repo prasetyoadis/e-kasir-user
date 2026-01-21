@@ -1,5 +1,4 @@
 import { handleApiError } from '../errors/handleApiError.js';
-import { showToast } from '../toast.js';
 
 // Parameter terakhir 'onSuccessCallback' adalah fungsi reset yang dikirim dari validation.js
 export async function registerUser(name, email, msisdn, password, onSuccessCallback) {
@@ -23,28 +22,35 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
 
         const resultResponse = await response.json();
         console.log('Register Response:', resultResponse);
+        const errorCode = resultResponse.result.errorCode;
 
         switch (resultResponse.statusCode) {
             case 400:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
                 break;
             case 409:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
                 break;
             case 422:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
 //                 showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
                 break;
             case 500:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
                 break;
             case 201:
-                showToast(resultResponse.result.errorMessage, 'success');
-                // redirect ke login
+                handleApiError(errorCode, 'success');
+                // === JALANKAN CALLBACK RESET FORM ===
+                // Jika fungsi dikirim, jalankan fungsi tersebut
+                if (onSuccessCallback && typeof onSuccessCallback === 'function') {
+                    onSuccessCallback(); 
+                }
+                
+                // Redirect / Geser Panel ke Login
                 setTimeout(() => {
                     // window.location.href = "/login";
                     container.classList.remove("active");
-                }, 1500); // kasih waktu toast tampil
+                }, 250); // kasih waktu toast tampil
                 break;
             default:
                 console.warn('Unhandled status code:', resultResponse.statusCode);

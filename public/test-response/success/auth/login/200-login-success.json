@@ -3,7 +3,7 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
-        "errorCode": "03",
+        "errorCode": "003",
         "errorMessage": "User login successfully",
         "data" : {
             "token" : {

@@ -21,22 +21,23 @@ export async function loginUser(email, password) {
 
         const resultResponse = await response.json();
         console.log('Loaded data:', resultResponse);
+        const errorCode = resultResponse.result.errorCode;
 
         switch (resultResponse.statusCode) {
             case 401:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
 
                 showLoginError(document.getElementById("loginEmail"), "Email atau password salah");
                 showLoginError(document.getElementById("loginPassword"), "Email atau password salah");
                 break;
             case 403:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
     
                 showLoginError(document.getElementById("loginEmail"), "");
                 showLoginError(document.getElementById("loginPassword"), "");
                 break;
             case 429:
-                handleApiError(resultResponse.result.errorCode);
+                handleApiError(errorCode);
     
                 showLoginError(document.getElementById("loginEmail"), "");
                 showLoginError(document.getElementById("loginPassword"), "");

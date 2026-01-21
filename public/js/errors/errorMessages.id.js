@@ -1,5 +1,4 @@
 export const ERROR_MESSAGES_ID = {
- // --- AUTH - SUCCESS (001-009) ---
   "001": "Pendaftaran akun berhasil! Selamat datang.",
   "002": "Anda telah berhasil keluar (Logout).",
   "003": "Login berhasil. Senang melihat Anda kembali!",
@@ -9,8 +8,6 @@ export const ERROR_MESSAGES_ID = {
   "007": "Akun berhasil diaktifkan.",
   "008": "Validasi sesi berhasil.",
   "009": "Otentikasi berhasil.",
-
-  // --- AUTH - ERROR (010-019) ---
   "010": "Email atau kata sandi tidak sesuai.",
   "011": "Sesi telah berakhir (Token Expired). Silakan login ulang.",
   "012": "Sesi tidak valid.",
@@ -21,8 +18,6 @@ export const ERROR_MESSAGES_ID = {
   "017": "Akun terkunci karena alasan keamanan.",
   "018": "Password telah kadaluarsa.",
   "019": "Terlalu banyak percobaan login gagal.",
-
-  // --- VALIDATION - ERROR (020-029) ---
   "020": "Validasi data gagal.",
   "021": "Mohon isi kolom yang wajib diisi.",
   "022": "Format permintaan tidak sesuai.",
@@ -33,8 +28,6 @@ export const ERROR_MESSAGES_ID = {
   "027": "Konfirmasi password tidak cocok.",
   "028": "Format tanggal tidak valid.",
   "029": "Header permintaan tidak valid.",
-
-  // --- DATA / CRUD - SUCCESS (030-039) ---
   "030": "Data baru berhasil dibuat.",
   "031": "Data berhasil diambil.",
   "032": "Data berhasil diperbarui.",
@@ -45,8 +38,6 @@ export const ERROR_MESSAGES_ID = {
   "037": "Data berhasil diarsipkan.",
   "038": "Data berhasil dipulihkan (Restore).",
   "039": "Sinkronisasi data berhasil.",
-
-  // --- DATA / BUSINESS - ERROR (040-049) ---
   "040": "Data tidak ditemukan.",
   "041": "Data duplikat terdeteksi.",
   "042": "Data sudah ada dalam sistem.",
@@ -57,8 +48,6 @@ export const ERROR_MESSAGES_ID = {
   "047": "Terdeteksi ketidakkonsistenan data.",
   "048": "Data sedang terkunci oleh proses lain.",
   "049": "Gagal memproses keterkaitan data (Foreign Key Error).",
-
-  // --- TRANSACTION - SUCCESS (050-059) ---
   "050": "Transaksi selesai dengan sukses.",
   "051": "Pembayaran berhasil diterima.",
   "052": "Pengembalian dana (Refund) berhasil diproses.",
@@ -69,8 +58,6 @@ export const ERROR_MESSAGES_ID = {
   "057": "Promo berhasil diterapkan.",
   "058": "Stok barang berhasil diamankan.",
   "059": "Transaksi terverifikasi valid.",
-
-  // --- TRANSACTION - ERROR (060-069) ---
   "060": "Transaksi gagal.",
   "061": "Saldo tidak mencukupi.",
   "062": "Pembayaran gagal diproses.",
@@ -81,8 +68,6 @@ export const ERROR_MESSAGES_ID = {
   "067": "Status transaksi tidak valid.",
   "068": "Stok barang tidak tersedia.",
   "069": "Jumlah stok tidak mencukupi.",
-
-  // --- SYSTEM / INFRA - ERROR (070-079) ---
   "070": "Terjadi kesalahan internal sistem.",
   "071": "Gagal terhubung ke database.",
   "072": "Koneksi database terputus (Timeout).",
@@ -93,8 +78,6 @@ export const ERROR_MESSAGES_ID = {
   "077": "Gagal menghubungi API eksternal.",
   "078": "Terjadi kesalahan konfigurasi sistem.",
   "079": "Terjadi kesalahan lingkungan sistem (Environment Error).",
-
-  // --- SYSTEM / PLATFORM - ERROR (080-089) ---
   "080": "Fitur belum tersedia.",
   "081": "Sistem sedang dalam pemeliharaan.",
   "082": "Server sedang sibuk (Overloaded).",
@@ -105,8 +88,6 @@ export const ERROR_MESSAGES_ID = {
   "087": "Proses latar belakang (Background Job) gagal.",
   "088": "Penjadwalan tugas (Scheduler) error.",
   "089": "Terjadi kesalahan sistem file.",
-
-  // --- CRITICAL / LIMIT - ERROR (090-100) ---
   "090": "Kapasitas penyimpanan (Disk) penuh.",
   "091": "Batas memori terlampaui.",
   "092": "Penggunaan CPU melebihi batas.",
@@ -118,4 +99,4 @@ export const ERROR_MESSAGES_ID = {
   "098": "Layanan dinonaktifkan sementara.",
   "099": "Kesalahan sistem fatal.",
   "100": "Sistem sedang dalam proses dimatikan (Shutdown)."
-}
+};

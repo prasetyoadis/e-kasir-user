@@ -1,5 +1,4 @@
 export const ERROR_MESSAGES_EN = {
-   // --- AUTH - SUCCESS (001-009) ---
   "001": "Registration successful! Welcome.",
   "002": "Logged out successfully.",
   "003": "Login successful. Welcome back!",
@@ -9,8 +8,6 @@ export const ERROR_MESSAGES_EN = {
   "007": "Account activated successfully.",
   "008": "Session validated successfully.",
   "009": "Authentication successful.",
-
-  // --- AUTH - ERROR (010-019) ---
   "010": "Invalid email or password.",
   "011": "Token expired. Please login again.",
   "012": "Token is invalid.",
@@ -21,8 +18,6 @@ export const ERROR_MESSAGES_EN = {
   "017": "Account is locked.",
   "018": "Password has expired.",
   "019": "Too many failed login attempts.",
-
-  // --- VALIDATION - ERROR (020-029) ---
   "020": "Validation failed.",
   "021": "Required field is missing.",
   "022": "Invalid request format.",
@@ -33,8 +28,6 @@ export const ERROR_MESSAGES_EN = {
   "027": "Password confirmation does not match.",
   "028": "Invalid date format.",
   "029": "Invalid request header.",
-
-  // --- DATA / CRUD - SUCCESS (030-039) ---
   "030": "Data created successfully.",
   "031": "Data retrieved successfully.",
   "032": "Data updated successfully.",
@@ -45,8 +38,6 @@ export const ERROR_MESSAGES_EN = {
   "037": "Data archived successfully.",
   "038": "Data restored successfully.",
   "039": "Data synchronization successful.",
-
-  // --- DATA / BUSINESS - ERROR (040-049) ---
   "040": "Data not found.",
   "041": "Duplicate data detected.",
   "042": "Data already exists.",
@@ -57,8 +48,6 @@ export const ERROR_MESSAGES_EN = {
   "047": "Data inconsistency detected.",
   "048": "Data is currently locked.",
   "049": "Foreign key constraint failed.",
-
-  // --- TRANSACTION - SUCCESS (050-059) ---
   "050": "Transaction completed successfully.",
   "051": "Payment received successfully.",
   "052": "Refund processed successfully.",
@@ -69,8 +58,6 @@ export const ERROR_MESSAGES_EN = {
   "057": "Promotion applied successfully.",
   "058": "Stock reserved successfully.",
   "059": "Transaction verified successfully.",
-
-  // --- TRANSACTION - ERROR (060-069) ---
   "060": "Transaction failed.",
   "061": "Insufficient balance.",
   "062": "Payment failed.",
@@ -81,8 +68,6 @@ export const ERROR_MESSAGES_EN = {
   "067": "Invalid transaction status.",
   "068": "Item is out of stock.",
   "069": "Insufficient stock quantity.",
-
-  // --- SYSTEM / INFRA - ERROR (070-079) ---
   "070": "Internal system error.",
   "071": "Database connection failed.",
   "072": "Database connection timeout.",
@@ -93,8 +78,6 @@ export const ERROR_MESSAGES_EN = {
   "077": "External API request failed.",
   "078": "Configuration error.",
   "079": "Environment error.",
-
-  // --- SYSTEM / PLATFORM - ERROR (080-089) ---
   "080": "Feature not implemented.",
   "081": "Maintenance in progress.",
   "082": "Server overloaded.",
@@ -105,8 +88,6 @@ export const ERROR_MESSAGES_EN = {
   "087": "Background job failed.",
   "088": "Scheduler error.",
   "089": "File system error.",
-
-  // --- CRITICAL / LIMIT - ERROR (090-100) ---
   "090": "Disk space exceeded.",
   "091": "Memory limit exceeded.",
   "092": "CPU limit exceeded.",
@@ -118,4 +99,4 @@ export const ERROR_MESSAGES_EN = {
   "098": "Service temporarily disabled.",
   "99": "Fatal system error.",
   "100": "System shutdown in progress."
-}
+};
