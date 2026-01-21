@@ -3,12 +3,14 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
+        "errorCode": "031",
+        "errorMessage": "Data retrieved successfully",
         "data": {
             "id": "f8b228a7-03e7-491d-ba48-c6ec625bb335",
-            "name": "Petugas Kasir",
-            "username": "petugaskasir",
-            "email": "petugaskasir@gmail.com",
-            "msisdn": "+6281345678899",
+            "name": "Owner Kasir",
+            "username": "ownerkasir",
+            "email": "ownerkasir@gmail.com",
+            "msisdn": "+6281113334445",
             "is_active": true,
             "subscriptions": [
                 {
@@ -33,13 +35,16 @@
             ],
             "roles": [
                 {
-                    "slug": "cashier",
+                    
+                    "slug": "owner",
                     "permissions": [
-                            "product.view",
-                            "product.update",
-                            "inventory.view",
-                            "inventory.update",
-                            "transaction.*"
+                            "user.*",
+                            "role.*",
+                            "outlet.*",
+                            "product.*",
+                            "inventory.*",
+                            "transaction.*",
+                            "report.*"
                     ]
                 }
             ],

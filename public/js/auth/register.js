@@ -25,29 +25,27 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
         console.log('Register Response:', resultResponse);
 
         switch (resultResponse.statusCode) {
-            case 201: // SUKSES
-                showToast(resultResponse.result.successMessage, 'success');
-
-                // === JALANKAN CALLBACK RESET FORM ===
-                // Jika fungsi dikirim, jalankan fungsi tersebut
-                if (onSuccessCallback && typeof onSuccessCallback === 'function') {
-                    onSuccessCallback();
-                }
-
-                // Redirect / Geser Panel ke Login
-                setTimeout(() => {
-                    container.classList.remove("active");
-                }, 1500);
-                break;
-
             case 400:
-            case 409:
-            case 422:
-            case 500:
-                // Error handled by helper
                 handleApiError(resultResponse.result.errorCode);
                 break;
-
+            case 409:
+                handleApiError(resultResponse.result.errorCode);
+                break;
+            case 422:
+                handleApiError(resultResponse.result.errorCode);
+//                 showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
+                break;
+            case 500:
+                handleApiError(resultResponse.result.errorCode);
+                break;
+            case 201:
+                showToast(resultResponse.result.errorMessage, 'success');
+                // redirect ke login
+                setTimeout(() => {
+                    // window.location.href = "/login";
+                    container.classList.remove("active");
+                }, 1500); // kasih waktu toast tampil
+                break;
             default:
                 console.warn('Unhandled status code:', resultResponse.statusCode);
                 handleApiError(resultResponse?.result?.errorCode);
@@ -56,4 +54,12 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
     } catch (err) {
         console.error("Register Error:", err);
     }
+}
+
+function showRegisterError(el, msg) {
+    const inputControl = el.parentElement; // Ambil div .input-control
+    const small = inputControl.querySelector("small");
+
+    small.innerText = msg;
+    inputControl.className = "input-control error";
 }
