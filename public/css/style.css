@@ -74,12 +74,11 @@ body {
 
 /* =====================
    INPUTS & VALIDATION
-   (Bagian ini dimodifikasi untuk Alert)
 ===================== */
 .input-control {
     width: 100%;
-    position: relative;
-    margin-bottom: 20px; /* Jarak antar input diperlebar untuk pesan error */
+    position: relative; /* Wajib relative agar icon absolute mengacu kesini */
+    margin-bottom: 20px;
     text-align: left;
 }
 
@@ -88,11 +87,14 @@ body {
     padding: 12px 14px;
     margin: 0;
     border-radius: 8px;
-    border: 2px solid #f1f5f9; /* Border default */
+    border: 2px solid #f1f5f9;
     background: #f1f5f9;
     font-size: 14px;
     outline: none;
     transition: all 0.3s;
+
+    /* Ruang default di kanan untuk icon mata (jika ada) */
+    padding-right: 40px;
 }
 
 /* State: ERROR (Merah) */
@@ -116,28 +118,76 @@ body {
 .input-control small {
     visibility: hidden;
     position: absolute;
-    bottom: -18px; /* Muncul di bawah input */
+    bottom: -18px;
     left: 5px;
     font-size: 11px;
     font-weight: 600;
 }
 
 /* =====================
-   WHATSAPP GROUP
+   ICON MATA (SHOW PASSWORD)
 ===================== */
-.phone-group {
-    display: flex;
-    gap: 10px;
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 14px;
+    z-index: 10;
 }
 
-.phone-group select {
-    width: 30%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 2px solid #f1f5f9;
-    background: #f1f5f9;
-    outline: none;
-    cursor: pointer;
+.toggle-password:hover {
+    color: #333;
+}
+
+/* =====================
+   ICON BENDERA (PHONE REGION)
+===================== */
+/* Wrapper khusus input phone agar tidak konflik */
+.input-control.phone-wrapper {
+    position: relative;
+}
+
+/* Input Phone butuh padding kiri ekstra untuk tempat bendera */
+#regPhone {
+    padding-left: 45px !important;
+}
+
+/* Style Bendera & Globe */
+.flag-icon {
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    /* Ukuran Fix agar gambar muncul sempurna */
+    width: 24px !important;
+    height: 18px !important;
+
+    display: inline-block;
+    z-index: 100;           /* Layer paling atas */
+    pointer-events: none;   /* Klik tembus ke input */
+    line-height: 18px;      /* Vertical align text */
+}
+
+/* Style Khusus Library flag-icons (Gambar Bendera) */
+.flag-icon.fi {
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1); /* Bayangan tipis agar bendera putih terlihat */
+}
+
+/* Style Khusus FontAwesome (Globe) saat belum detect */
+.flag-icon.fa-earth-asia {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    /* Reset background agar tidak konflik dengan class .fi */
+    background: none !important;
+    box-shadow: none;
 }
 
 /* =====================
@@ -305,15 +355,11 @@ body {
 /* =====================
    RESPONSIVE (MOBILE)
 ===================== */
-/* =====================
-   RESPONSIVE (MOBILE)
-===================== */
 @media (max-width: 768px) {
     .container {
         width: 90%;
         height: auto;
-        /* min-height: 500px; */
-        flex-direction: column-reverse; /* Form di atas, Panel biru di bawah */
+        flex-direction: column-reverse;
         overflow-y: auto;
     }
 
@@ -325,7 +371,7 @@ body {
     }
 
     .form-wrapper {
-        min-height: 565px; /* Ruang untuk form */
+        min-height: 565px;
     }
 
     .form-container {
@@ -333,7 +379,7 @@ body {
         position: absolute;
     }
 
-    /* Reset Transform di Mobile agar tidak berantakan */
+    /* Reset Transform di Mobile */
     .container.active .form-wrapper {
         transform: none;
     }
@@ -346,7 +392,7 @@ body {
         transform: none;
     }
 
-    /* Logic Tampilan Mobile: Gunakan opacity/z-index saja tanpa geser */
+    /* Logic Tampilan Mobile: Gunakan opacity/z-index saja */
     .sign-in,
     .sign-up {
         transition: opacity 0.4s ease;
@@ -401,9 +447,5 @@ body {
     }
     .form-container {
         padding: 20px;
-    }
-
-    .phone-group select {
-        width: 35%;
     }
 }
