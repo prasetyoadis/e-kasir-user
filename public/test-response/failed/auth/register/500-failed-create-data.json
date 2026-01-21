@@ -3,7 +3,7 @@
     "statusMessage": "Unexpected server error",
     "statusDescription": "Unexpected error occurred on the server",
     "result": {
-        "errorCode": "41",
+        "errorCode": "043",
         "errorMessage": "Failed to create data"
     }
 }

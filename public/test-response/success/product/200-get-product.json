@@ -3,6 +3,8 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
+        "errorCode": "031",
+        "errorMessage": "Data retrieved successfully",
         "data" : {
             "id": "e89f53a8-e35a-456c-a411-b14739274565",
             "sku": "SNJ-SBY-001",

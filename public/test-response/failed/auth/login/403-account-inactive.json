@@ -3,7 +3,7 @@
     "statusMessage": "Forbidden",
     "statusDescription": "Access denied",
     "result": {
-        "errorCode": "7",
+        "errorCode": "016",
         "errorMessage": "Account is inactive"
     }
 }

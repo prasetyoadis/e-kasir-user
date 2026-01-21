@@ -3,6 +3,7 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
-        "successMessage": "Log out successfully"
+        "errorCode": "002",
+        "errorMessage": "User logout successfully"
     }
 }
