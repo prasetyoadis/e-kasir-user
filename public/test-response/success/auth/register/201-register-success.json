@@ -3,7 +3,8 @@
     "statusMessage": "Created",
     "statusDescription": "Resource created successfully",
     "result": {
-        "successMessage": "User register successfully",
+        "errorCode": "01",
+        "errorMessage": "User register successfully",
         "data": {
             "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         }

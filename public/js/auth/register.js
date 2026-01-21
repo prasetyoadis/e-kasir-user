@@ -37,14 +37,16 @@ export async function registerUser(name, username, email, msisdn, password) {
                 break;
             case 422:
                 handleApiError(resultResponse.result.errorCode);
+                showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
                 break;
             case 500:
                 handleApiError(resultResponse.result.errorCode);
                 break;
             case 201:
-                showToast(resultResponse.result.successMessage, 'success');
+                showToast(resultResponse.result.errorMessage, 'success');
                 // redirect ke login
                 setTimeout(() => {
+                    // window.location.href = "/login";
                     container.classList.remove("active");
                 }, 1500); // kasih waktu toast tampil
                 break;
@@ -58,7 +60,7 @@ export async function registerUser(name, username, email, msisdn, password) {
     }
 }
 
-function showLoginError(el, msg) {
+function showRegisterError(el, msg) {
     const inputControl = el.parentElement; // Ambil div .input-control
     const small = inputControl.querySelector("small");
 

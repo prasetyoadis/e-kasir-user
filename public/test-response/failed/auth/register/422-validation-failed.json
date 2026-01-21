@@ -3,7 +3,7 @@
     "statusMessage": "Unprocessable Entity",
     "statusDescription": "Validation failed",
     "result": {
-        "errorCode": "21",
+        "errorCode": "020",
         "errorMessage": "Validation failed",
         "errors": {
             "email": [
