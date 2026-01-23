@@ -23,7 +23,7 @@
     </div>
 
     <div class="header-center">
-        <img src="../asset/img/logo-kasia.png" alt="Center Logo" class="center-logo">
+        <img src="../asset/img/kassia-bg-trans.webp" alt="Center Logo" class="center-logo">
     </div>
 
     <div class="search-bar">

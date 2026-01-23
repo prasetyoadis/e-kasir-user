@@ -1,13 +1,21 @@
-import { handleApiError } from '../errors/handleApiError.js';
+import { handleApiError } from "../errors/handleApiError.js";
 
 // Parameter terakhir 'onSuccessCallback' adalah fungsi reset yang dikirim dari validation.js
-export async function registerUser(name, email, msisdn, password, onSuccessCallback) {
+export async function registerUser(
+    name,
+    email,
+    msisdn,
+    password,
+    onSuccessCallback,
+) {
     const container = document.getElementById("container");
 
     try {
         // Ganti Logic ini sesuai kebutuhan (True/False)
         const isSuccess = true;
-        const url = isSuccess ? 'test-response/success/auth/register/201-register-success.json' : 'test-response/failed/auth/register/422-validation-failed.json';
+        const url = isSuccess
+            ? "test-response/success/auth/register/201-register-success.json"
+            : "test-response/failed/auth/register/422-validation-failed.json";
 
         const response = await fetch(url);
 
@@ -21,7 +29,7 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
         */
 
         const resultResponse = await response.json();
-        console.log('Register Response:', resultResponse);
+        console.log("Register Response:", resultResponse);
         const errorCode = resultResponse.result.errorCode;
 
         switch (resultResponse.statusCode) {
@@ -33,19 +41,22 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
                 break;
             case 422:
                 handleApiError(errorCode);
-//                 showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
+                //                 showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
                 break;
             case 500:
                 handleApiError(errorCode);
                 break;
             case 201:
-                handleApiError(errorCode, 'success');
+                handleApiError(errorCode, "success");
                 // === JALANKAN CALLBACK RESET FORM ===
                 // Jika fungsi dikirim, jalankan fungsi tersebut
-                if (onSuccessCallback && typeof onSuccessCallback === 'function') {
-                    onSuccessCallback(); 
+                if (
+                    onSuccessCallback &&
+                    typeof onSuccessCallback === "function"
+                ) {
+                    onSuccessCallback();
                 }
-                
+
                 // Redirect / Geser Panel ke Login
                 setTimeout(() => {
                     // window.location.href = "/login";
@@ -53,7 +64,10 @@ export async function registerUser(name, email, msisdn, password, onSuccessCallb
                 }, 250); // kasih waktu toast tampil
                 break;
             default:
-                console.warn('Unhandled status code:', resultResponse.statusCode);
+                console.warn(
+                    "Unhandled status code:",
+                    resultResponse.statusCode,
+                );
                 handleApiError(resultResponse?.result?.errorCode);
                 break;
         }
