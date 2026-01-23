@@ -3,7 +3,7 @@
     "statusMessage": "Too Many Requests",
     "statusDescription": "Rate limit exceeded",
     "result": {
-        "errorCode": "019",
+        "errorCode": "19",
         "errorMessage": "Too many login attempts"
     }
 }

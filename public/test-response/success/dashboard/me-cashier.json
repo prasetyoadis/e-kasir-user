@@ -3,12 +3,11 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
-        "errorCode": "031",
+        "errorCode": "31",
         "errorMessage": "Data retrieved successfully",
         "data": {
             "id": "f8b228a7-03e7-491d-ba48-c6ec625bb335",
             "name": "Petugas Kasir",
-            "username": "petugaskasir",
             "email": "petugaskasir@gmail.com",
             "msisdn": "+6281345678899",
             "is_active": true,
@@ -41,7 +40,7 @@
                             "product.update",
                             "inventory.view",
                             "inventory.update",
-                            "transaction.*"
+                            "transaction.create"
                     ]
                 }
             ],

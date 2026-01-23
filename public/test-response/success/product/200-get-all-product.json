@@ -3,7 +3,7 @@
     "statusMessage": "OK",
     "statusDescription": "Request processed successfully",
     "result": {
-        "errorCode": "031",
+        "errorCode": "31",
         "errorMessage": "Data retrieved successfully",
         "data" : [
             {

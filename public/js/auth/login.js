@@ -2,7 +2,7 @@ import { handleApiError } from '../errors/handleApiError.js';
 
 export async function loginUser(email, password) {
     try {
-        const isSuccess = false;
+        const isSuccess = true;
         const url = isSuccess ? 'test-response/success/auth/login/200-login-success.json' : 'test-response/failed/auth/login/401-invalid-credentials.json';
         
         // simulasi login → fetch ke file JSON statis

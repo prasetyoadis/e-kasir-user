@@ -3,7 +3,7 @@
     "statusMessage": "Bad Request",
     "statusDescription": "Invalid request parameters",
     "result": {
-        "errorCode": "021",
+        "errorCode": "21",
         "errorMessage": "Required field missing"
     }
 }

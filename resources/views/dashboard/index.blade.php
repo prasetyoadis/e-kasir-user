@@ -9,7 +9,7 @@
     <div id="dashboard" class="" style="max-width: 480px; margin: 0 auto;">
         <h2>Info</h2>
         <p>
-            HTTP: /api/user/current<br>
+            HTTP: /api/auth/me<br>
             User: <span id="name"></span><br>
             <!-- Status User: <span id="status-user"></span><br> -->
             <!-- Status Subscription: <span id="status-subscription"></span><br> -->

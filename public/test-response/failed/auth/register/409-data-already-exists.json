@@ -3,7 +3,7 @@
     "statusMessage": "Conflict",
     "statusDescription": "Data conflict occurred",
     "result": {
-        "errorCode": "042",
+        "errorCode": "42",
         "errorMessage": "Data already exists"
     }
 }

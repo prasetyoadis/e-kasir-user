@@ -7,9 +7,9 @@
         "errorMessage": "Data retrieved successfully",
         "data": {
             "id": "f8b228a7-03e7-491d-ba48-c6ec625bb335",
-            "name": "Owner Kasir",
-            "email": "ownerkasir@gmail.com",
-            "msisdn": "+6281113334445",
+            "name": "Manager Kasir",
+            "email": "managerkasir@gmail.com",
+            "msisdn": "+6281122334445",
             "is_active": true,
             "subscriptions": [
                 {
@@ -35,15 +35,15 @@
             "roles": [
                 {
                     
-                    "slug": "owner",
+                    "slug": "manager",
                     "permissions": [
                             "user.*",
-                            "outlet.*",
-                            "category.*",
+                            "outlet.view",
+                            "outlet.update",
                             "product.*",
-                            "inventory.*",
                             "transaction.*",
-                            "report.*"
+                            "inventory.view",
+                            "report.view"
                     ]
                 }
             ],

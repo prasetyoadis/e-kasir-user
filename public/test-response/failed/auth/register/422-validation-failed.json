@@ -3,15 +3,7 @@
     "statusMessage": "Unprocessable Entity",
     "statusDescription": "Validation failed",
     "result": {
-        "errorCode": "020",
-        "errorMessage": "Validation failed",
-        "errors": {
-            "email": [
-                "The email field must be a valid email address"
-            ],
-            "password": [
-                "The password field minimum 8 characters"
-            ] 
-        }
+        "errorCode": "20",
+        "errorMessage": "Validation failed"
     }
 }
