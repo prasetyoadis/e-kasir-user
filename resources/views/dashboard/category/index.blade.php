@@ -18,7 +18,6 @@
     </style>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo">
             <img src="{{ asset('asset/img/kassia-logo-transparent.webp') }}" alt="Kassia">
@@ -39,49 +38,49 @@
             </button>
         </div>
 
-        <div class="card">
-            <div class="list-header">Nama Kategori</div>
-            <ul class="category-list" id="categoryListContainer">
-                <li class="cat-item">Loading categories...</li>
-            </ul>
-        </div>
-
-        <div class="table-container">
-            <div style="margin-bottom: 15px; color: #8b7e66; font-size: 0.9rem;" id="tableInfoText">
-                Showing all entries
-            </div>
-            
-            <table class="inventory-table">
-                <thead>
-                    <tr>
-                        <th>Produk</th>
-                        <th>SKU</th>
-                        <th>Min Stok</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="productTableBody">
-                    </tbody>
-            </table>
-
-            <div class="pagination-container">
-                <div class="pagination-info" id="paginationInfo">
-                    Showing 0 to 0 of 0 entries
-                </div>
-                <div class="pagination-controls">
-                    <button id="btnPrev" class="btn-page" disabled>
-                        <i class="fa-solid fa-chevron-left"></i> Prev
-                    </button>
-                    <button id="btnNext" class="btn-page" disabled>
-                        Next <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
+        <div class="content-grid">
+            <div class="card category-sidebar">
+                <div class="list-header">Daftar Kategori</div>
+                <ul class="category-list" id="categoryListContainer">
+                    <li class="cat-item">Loading categories...</li>
+                </ul>
             </div>
 
+            <div class="table-wrapper">
+                <div class="table-container">
+                    <div style="margin-bottom: 15px; color: #8b7e66; font-size: 0.9rem;" id="tableInfoText">
+                        Showing all entries
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th>Produk</th>
+                                    <th>SKU</th>
+                                    <th>Min Stok</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination-container">
+                        <div class="pagination-info" id="paginationInfo">Showing 0 of 0</div>
+                        <div class="pagination-controls">
+                            <button id="btnPrev" class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                            <button id="btnNext" class="btn-page" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
+
     <div id="adjustModal" class="modal-overlay">
         <div class="modal-container">
             <div class="modal-header">
