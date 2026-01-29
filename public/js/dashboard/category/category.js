@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButtons = document.querySelectorAll(".btn-toggle");
     const adjustmentTypeHidden = document.getElementById("adjustmentType");
 
+    const DEFAULT_IMAGE = 'asset/img/products/no_image.jpg';
+
     // --- 1. FETCH DATA ---
     fetch(API_URL)
         .then((response) => {
@@ -46,13 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const rawProducts = json.result.data;
             // Inject Random Stock untuk demo
             allProducts = rawProducts.map((product) => {
-                let imageUrl = product.image.url;
-                if (!imageUrl.startsWith("/")) imageUrl = "/" + imageUrl;
+                let imageUrl = product?.image?.url;
+
+                // kalau null / undefined / empty
+                if (!imageUrl) {
+                    imageUrl = DEFAULT_IMAGE;
+                } else {
+                    if (!imageUrl.startsWith('/')) imageUrl = '/' + imageUrl;
+                }
+                
                 return {
                     ...product,
                     image: imageUrl,
-                    min_stock: 5,
-                    stock: Math.floor(Math.random() * 20),
+                    min_stock: product.min_stock,
+                    stock: product.current_stock,
                 };
             });
 
@@ -152,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tr.innerHTML = `
                 <td>
                     <div class="product-cell">
-                        <img src="${item.image}" class="product-img" onerror="this.src='https://via.placeholder.com/40'">
+                        <img src="${item.image}" class="product-img" onerror="this.onerror=null;this.src='/asset/img/products/no_image.jpg';">
                         <div class="product-info">
                             <div style="font-weight:600">${item.name}</div>
                             <span style="font-size:0.8rem; color:#8b7e66">${item.sku}</span>

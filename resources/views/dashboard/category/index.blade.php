@@ -131,6 +131,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/category.js') }}"></script>
+    <script src="{{ asset('js/dashboard/category/category.js') }}"></script>
 </body>
 </html>

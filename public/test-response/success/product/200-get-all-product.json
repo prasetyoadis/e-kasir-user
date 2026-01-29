@@ -11,6 +11,8 @@
                 "sku": "SNJ-SBY-001",
                 "name": "Sego Njamoer Original",
                 "description": "Nasi putih dengan jamur krispi khas Sego Njamoer.",
+                "current_stock": 16,
+                "min_stock": 5,
                 "base_price": 15000,
                 "variants": [
                     {
@@ -18,20 +20,24 @@
                         "variant_name": "Reguler",
                         "description": "Porsi standar",
                         "price": 15000,
+                        "current_stock": 8,
+                        "min_stock": 5,
                         "is_active": true
                     },
                     {
                         "id": "24d9cf80-ffa1-4bba-8bd7-6aba5898f784",
                         "variant_name": "Jumbo",
                         "description": "Porsi lebih besar",
+                        "current_stock": 8,
+                        "min_stock": 5,
                         "price": 18000,
                         "is_active": true
                     }
                 ],
                 "categories": ["Makanan", "Menu Utama", "Jamur"],
                 "image": {
-                    "url" : "asset/img/products/snj-sby-001.webp",
-                    "alt" : "Sego Njamoer Original"
+                    "url" : "asset/img/products/snj-sby-001-gambar-1.webp",
+                    "alt" : "Sego Njamoer Original Gambar 1"
                 },
                 "is_active": true,
                 "created_at": "2026-01-12T09:00:00+07:00",
@@ -43,12 +49,16 @@
                 "name": "Sego Njamoer Sambal Ijo",
                 "description": "Sego Njamoer dengan sambal ijo khas.",
                 "base_price": 16000,
+                "current_stock": 17,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "6ac233e3-6a30-4f2a-b37c-48166469fe1c",
                         "variant_name": "Reguler",
                         "description": "Pedas sedang",
                         "price": 16000,
+                        "current_stock": 17,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -66,6 +76,8 @@
                 "sku": "SNJ-SBY-003",
                 "name": "Sego Njamoer Teriyaki",
                 "description": "Jamur saus teriyaki manis gurih.",
+                "current_stock": 16,
+                "min_stock": 5,
                 "base_price": 17000,
                 "variants": [
                     {
@@ -91,12 +103,16 @@
                 "name": "Jamur Crispy Original",
                 "description": "Jamur krispi gurih tanpa saus.",
                 "base_price": 10000,
+                "current_stock": 0,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "ec0d877f-83a8-430a-bff4-9fccaf803b7f",
                         "variant_name": "Small",
                         "description": "Porsi kecil",
                         "price": 10000,
+                        "current_stock": 0,
+                        "min_stock": 5,
                         "is_active": true
                     },
                     {
@@ -104,6 +120,8 @@
                         "variant_name": "Large",
                         "description": "Porsi besar",
                         "price": 14000,
+                        "current_stock": 0,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -122,12 +140,16 @@
                 "name": "Jamur Crispy Balado",
                 "description": "Jamur krispi dengan bumbu balado pedas.",
                 "base_price": 12000,
+                "current_stock": 1,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "f26b7640-97d3-4aa1-9637-c7fbe850c04a",
                         "variant_name": "Pedas",
                         "description": "Pedas standar",
                         "price": 12000,
+                        "current_stock": 1,
+                        "min_stock": 5,
                         "is_active": true
                     },
                     {
@@ -135,6 +157,8 @@
                         "variant_name": "Extra Pedas",
                         "description": "Cabai ekstra",
                         "price": 15000,
+                        "current_stock": 0,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -153,12 +177,16 @@
                 "name": "Jamur Saus BBQ",
                 "description": "Jamur krispi dengan saus BBQ.",
                 "base_price": 13000,
+                "current_stock": 6,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "c4bb2cfe-b68e-459e-84ce-7b0e8bbbb709",
                         "variant_name": "Reguler",
                         "description": "BBQ original",
                         "price": 13000,
+                        "current_stock": 6,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -177,12 +205,16 @@
                 "name": "Nasi Putih",
                 "description": "Nasi putih hangat.",
                 "base_price": 5000,
+                "current_stock": 7,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "227a6f91-4129-42c5-b45c-f7b6a6eea88e",
                         "variant_name": "Reguler",
                         "description": "Nasi semangkuk",
                         "price": 16000,
+                        "current_stock": 7,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -201,12 +233,16 @@
                 "name": "Es Teh",
                 "description": "Es teh segar.",
                 "base_price": 5000,
+                "current_stock": 6,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "233c1169-6b55-438d-a6eb-62862c22593b",
                         "variant_name": "Reguler Manis",
                         "description": "Dengan gula",
                         "price": 5000,
+                        "current_stock": 3,
+                        "min_stock": 5,
                         "is_active": true
                     },
                     {
@@ -214,6 +250,8 @@
                         "variant_name": "Reguler Tawar",
                         "description": "Tanpa gula",
                         "price": 4000,
+                        "current_stock": 2,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -232,12 +270,16 @@
                 "name": "Es Jeruk",
                 "description": "Minuman jeruk segar dingin.",
                 "base_price": 6000,
+                "current_stock": 10,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "2e71be85-cce5-457f-b8e8-3bab254c33cb",
                         "variant_name": "Reguler Manis",
                         "description": "Dengan gula",
                         "price": 6000,
+                        "current_stock": 10,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],
@@ -256,12 +298,16 @@
                 "name": "Teh Hangat",
                 "description": "Teh hangat untuk pendamping makan.",
                 "base_price": 4000,
+                "current_stock": 10,
+                "min_stock": 5,
                 "variants": [
                     {
                         "id": "2ab68567-f11e-48e4-a4f6-dfae6f3300e3",
                         "variant_name": "Reguler Manis",
                         "description": "Dengan gula",
                         "price": 4000,
+                        "current_stock": 4,
+                        "min_stock": 5,
                         "is_active": true
                     },
                     {
@@ -269,6 +315,8 @@
                         "variant_name": "Reguler Tawar",
                         "description": "Tanpa gula",
                         "price": 3000,
+                        "current_stock": 6,
+                        "min_stock": 5,
                         "is_active": true
                     }
                 ],

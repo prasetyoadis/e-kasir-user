@@ -14,10 +14,10 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 Route::get('/dashboard/kasir', function () {
-    return view('dashboard.kasir.index');
+    return view('dashboard.cashier-pos.index');
 });
 Route::get('/dashboard/kasir-cafe', function () {
-    return view('dashboard.kasir-cafe.index');
+    return view('dashboard.cashier-cafe.index');
 });
 
 Route::get('/dashboard/products', function () {
@@ -25,8 +25,12 @@ Route::get('/dashboard/products', function () {
 });
 
 Route::get('/dashboard/products/detail', function () {
-    return view('dashboard.products.detail');
+    return view('dashboard.products.show');
 });
 Route::get('/dashboard/inventories', function () {
     return view('dashboard.inventory.index');
+});
+
+Route::get('/dashboard/categories', function () {
+    return view('dashboard.category.index');
 });

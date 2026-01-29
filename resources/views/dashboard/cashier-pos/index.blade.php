@@ -15,7 +15,7 @@
 
         <aside class="sidebar" id="sidebar">
             <div class="brand">
-                <img src="../asset/img/kassia-logo-transparent.webp"/> <span class="brand-text">Kassia</span>
+                <img src="/asset/img/kassia-logo-transparent.webp"/> <span class="brand-text">Kassia</span>
                 <button class="close-sidebar-btn" onclick="toggleSidebar()">
                     <i class="fas fa-times"></i>
                 </button>
@@ -173,7 +173,7 @@
 
     </div>
 
-    <script src="{{ asset('js/dashboard/kasir/pos-logic.js') }}"></script>
+    <script src="{{ asset('js/dashboard/cashier/pos-logic.js') }}"></script>
 
     <script>
         // Toggle Sidebar khusus Mobile

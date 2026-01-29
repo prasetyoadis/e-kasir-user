@@ -170,6 +170,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/iventory.js') }}"></script>
+    <script src="{{ asset('js/dashboard/inventory/iventory.js') }}"></script>
 </body>
 </html>

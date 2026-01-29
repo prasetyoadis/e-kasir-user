@@ -82,9 +82,9 @@
         </main>
     </div>
 
-    @include('dashboard.products.modal-produk')
+    @include('partials.dashboard.products.modal-produk')
 
-    <script src="{{ asset('js/product/script.js') }}"></script>
+    <script src="{{ asset('js/dashboard/product/script.js') }}"></script>
 </body>
 
 </html>

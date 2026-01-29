@@ -23,7 +23,7 @@
     </div>
 
     <div class="header-center">
-        <img src="../asset/img/kassia-bg-trans.webp" alt="Center Logo" class="center-logo">
+        <img src="/asset/img/kassia-bg-trans.webp" alt="Center Logo" class="center-logo">
     </div>
 
     <div class="search-bar">
@@ -119,7 +119,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/dashboard/kasir/kasir-cafe.js') }}"></script>
+    <script src="{{ asset('js/dashboard/cashier/kasir-cafe.js') }}"></script>
 </body>
 
 </html>

@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 price: item.base_price,
                 stock: randomStock,
                 status: item.is_active ? 'Aktif' : 'Nonaktif',
-                img: item.image.url ? item.image.url : 'https://via.placeholder.com/56'
+                img: item.image.url ? item.image.url : 'asset/img/products/no_image.jpg'
             };
         });
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tr.innerHTML = `
                     <td>
                         <div class="product-cell">
-                            <img src="${item.img}" class="product-img" alt="${item.name}" onerror="this.src='https://via.placeholder.com/56'">
+                            <img src="${item.img}" class="product-img" alt="${item.name}" onerror="this.onerror=null;this.src='/asset/img/products/no_image.jpg';">
                             <div class="product-info">
                                 <h4>${item.name}</h4>
                                 <p>${item.sku}</p>

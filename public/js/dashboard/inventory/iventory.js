@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButtons = document.querySelectorAll(".btn-toggle");
     const adjustmentTypeHidden = document.getElementById("adjustmentType");
 
+    const DEFAULT_IMAGE = 'asset/img/products/no_image.jpg';
+
     // --- 3. HELPER FUNCTIONS ---
     function getStatus(stock, minStock) {
         if (stock === 0)
@@ -58,16 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((jsonResponse) => {
             const products = jsonResponse.result.data;
             allProductsData = products.map((product) => {
-                let imageUrl = product.image.url;
-                if (!imageUrl.startsWith("/")) imageUrl = "/" + imageUrl;
+                let imageUrl = product?.image?.url;
+
+                // kalau null / undefined / empty
+                if (!imageUrl) {
+                    imageUrl = DEFAULT_IMAGE;
+                } else {
+                    if (!imageUrl.startsWith('/')) imageUrl = '/' + imageUrl;
+                }
 
                 return {
                     id: product.id,
                     name: product.name,
                     sku: product.sku,
                     image: imageUrl,
-                    min_stock: 5,
-                    stock: Math.floor(Math.random() * 20),
+                    min_stock: product.min_stock,
+                    stock: product.current_stock,
                 };
             });
             filteredData = [...allProductsData];
@@ -161,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.innerHTML = `
                 <td>
                     <div class="product-cell">
-                        <img src="${imgPath}" alt="${item.name}" class="product-img" onerror="this.src='https://via.placeholder.com/40?text=No+Img'">
+                        <img src="${imgPath}" alt="${item.name}" class="product-img" onerror="this.onerror=null;this.src='/asset/img/products/no_image.jpg';">
                         <div class="product-info">
                             <div>${item.name}</div>
                             <span>${item.sku}</span>
