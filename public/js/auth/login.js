@@ -2,22 +2,22 @@ import { handleApiError } from '../errors/handleApiError.js';
 
 export async function loginUser(email, password) {
     try {
-        const isSuccess = true;
-        const url = isSuccess ? 'test-response/success/auth/login/200-login-success.json' : 'test-response/failed/auth/login/401-invalid-credentials.json';
+        // const isSuccess = true;
+        // const url = isSuccess ? 'test-response/success/auth/login/200-login-success.json' : 'test-response/failed/auth/login/401-invalid-credentials.json';
         
         // simulasi login → fetch ke file JSON statis
-        const response = await fetch(url);
+        // const response = await fetch(url);
 
-        // const response = await fetch('http://192.168.43.6:8080/api/auth/login', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         email,
-        //         password
-        //     })
-        // })
+        const response = await fetch('http://192.168.43.6:8000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        })
 
         const resultResponse = await response.json();
         console.log('Loaded data:', resultResponse);

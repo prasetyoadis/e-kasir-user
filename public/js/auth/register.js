@@ -12,21 +12,23 @@ export async function registerUser(
 
     try {
         // Ganti Logic ini sesuai kebutuhan (True/False)
-        const isSuccess = true;
-        const url = isSuccess
-            ? "test-response/success/auth/register/201-register-success.json"
-            : "test-response/failed/auth/register/422-validation-failed.json";
+        // const isSuccess = true;
+        // const url = isSuccess
+        //     ? "test-response/success/auth/register/201-register-success.json"
+        //     : "test-response/failed/auth/register/422-validation-failed.json";
 
-        const response = await fetch(url);
+        // const response = await fetch(url);
 
         // --- FETCH REAL API (Contoh) ---
-        /*
-        const response = await fetch('http://192.168.43.6:8080/api/auth/register', {
+        
+        const response = await fetch('http://192.168.43.6:8000/api/auth/register', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
             body: JSON.stringify({ name, email, msisdn, password })
         })
-        */
+        
 
         const resultResponse = await response.json();
         console.log("Register Response:", resultResponse);
