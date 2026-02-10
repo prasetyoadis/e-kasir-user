@@ -11,5 +11,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard.index');
+    return view('dashboard.index',[
+        'title' => 'Dashboard'
+    ]);
 });
