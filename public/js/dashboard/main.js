@@ -1,5 +1,4 @@
 const token = localStorage.getItem('token');
-const formLogout = document.getElementById('formLogout');
 
 document.addEventListener('DOMContentLoaded', async () => {
     if(localStorage.getItem('is_logged_in') === 'false'){
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         // const response = await fetch('test-response/success/dashboard/me-admin.json');
         
-        const response = await fetch('http://192.168.43.6:8000/api/auth/me', {
+        const response = await fetch('http://192.168.43.6:8001/api/auth/me', {
             method: 'GET',
             headers: {
                 'Authorization': `bearer ${token}`,
@@ -163,9 +162,3 @@ function applyUserPrivilege(user) {
     userSlug.textContent = roleUser.slug;
     userAccess.textContent = permissionUser.join(', ');
 }
-
-formLogout.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    await logoutUser(token);
-});

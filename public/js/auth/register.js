@@ -21,7 +21,7 @@ export async function registerUser(
 
         // --- FETCH REAL API (Contoh) ---
         
-        const response = await fetch('http://192.168.43.6:8000/api/auth/register', {
+        const response = await fetch('http://192.168.43.6:8001/api/auth/register', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json' 

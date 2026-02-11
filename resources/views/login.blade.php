@@ -7,8 +7,8 @@
     <title>Sign In - Kassia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/toast-notify.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/toast-notify.css') }}">
 </head>
 
 <body>
@@ -96,7 +96,7 @@
 
         <div class="right-panel">
             <div class="panel-content">
-                <img src="asset/img/kassia-logo-transparent.webp" alt="Dashboard" />
+                <img src="/asset/img/kassia-logo-transparent.webp" alt="Dashboard" />
                 <h2>The easiest way to manage your transaction</h2>
                 <p>Simple cashier for your business</p>
             </div>
@@ -104,8 +104,8 @@
     </div>
 
     
-    <script src="js/main.js"></script>
-    <script type="module" src="js/validation.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script type="module" src="{{ asset('js/validation.js') }}"></script>
 </body>
 
 </html>

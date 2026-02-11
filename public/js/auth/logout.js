@@ -1,8 +1,16 @@
+const formLogout = document.getElementById('formLogout');
+
+formLogout.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    await logoutUser(token);
+});
+
 async function logoutUser(token) {
     try {
         // const response = await fetch('test-response/200logoutsuccess.json');
 
-        const response = await fetch('http://192.168.43.6:8000/api/auth/logout', {
+        const response = await fetch('http://192.168.43.6:8001/api/auth/logout', {
             method: 'POST',
             headers: {
                 'Authorization': `bearer ${token}`,

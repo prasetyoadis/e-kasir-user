@@ -20,7 +20,8 @@
         @yield ('content')
      </main>
      <!-- JS -->
-      <script src="{{ asset('js/header.js') }}"></script>
+     <script src="{{ asset('js/header.js') }}"></script>
+     <script src="{{ asset('js/auth/logout.js') }}"></script>
       @yield('js')
 </body>
 </html>
