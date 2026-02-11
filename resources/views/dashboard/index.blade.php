@@ -1,7 +1,9 @@
 @extends('layouts.main-dashboard')
-<!-- CSS -->
+
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,36 +16,106 @@
         }
     </style>
 @endsection
-<!-- Konten -->
+
 @section('content')
-<div id="dashboard" class="" style="max-width: 480px; margin: 0 auto;">
-        <h2>Info</h2>
-        <p>
-            HTTP: /api/auth/me<br>
-            User: <span id="name"></span><br>
-            <!-- Status User: <span id="status-user"></span><br> -->
-            <!-- Status Subscription: <span id="status-subscription"></span><br> -->
-            Subscription End: <span id="time-end-subscription"></span><br>
-            Role: <span id="role"></span><br>
-            Akses: <span id="access"></span>
-        </p>
-        <p>
-            <form id="formLogout">
-                <button type="submit">Sign Out</button>
-            </form>
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:16px">
-            <div id="users" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:red">Users</div>
-            <div id="products" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:gray">Products</div>
-            <div id="inventories" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:orange">Products</div>
-            <div id="transactions" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:black">Transactions</div>
-            <div id="outlets" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:green">Outlets</div>
-            <div id="reports" class="box" style="display: none; align-items: center; justify-content: center; width:100px; height:100px; text-align: center; color:white; background:blue">Reports</div>
+<div class="dashboard-container">
+
+    <div class="welcome-section">
+        <h1 class="welcome-title" id="greetingText">Memuat...</h1>
+        <p class="welcome-subtitle">Kelola toko dan transaksi Anda dengan lebih rapi dan efisien.</p>
+    </div>
+
+    <div class="account-info-card">
+        <div class="card-heading">
+            Informasi Akun
+            <i class="fa-solid fa-ellipsis text-gray-400"></i>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <div class="info-label">
+                    <i class="fa-regular fa-calendar"></i> Subscription End
+                </div>
+                <div class="info-value">Lifetime Access</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">
+                    <i class="fa-regular fa-user"></i> Role / Jabatan
+                </div>
+                <div class="info-value" id="userRoleDisplay">-</div>
+            </div>
         </div>
     </div>
+
+    <div class="modules-grid">
+
+        <a href="#" class="module-card">
+            <div class="module-icon icon-blue">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Users</div>
+                <div class="module-desc">Kelola pengguna sistem</div>
+            </div>
+        </a>
+
+        <a href="/dashboard/products" class="module-card">
+            <div class="module-icon icon-green">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Products</div>
+                <div class="module-desc">Manajemen produk & harga</div>
+            </div>
+        </a>
+
+        <a href="/dashboard/inventories" class="module-card">
+            <div class="module-icon icon-orange">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Inventory</div>
+                <div class="module-desc">Stok & pergerakan barang</div>
+            </div>
+        </a>
+
+        <a href="#" class="module-card">
+            <div class="module-icon icon-purple">
+                <i class="fa-solid fa-receipt"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Transactions</div>
+                <div class="module-desc">Riwayat penjualan</div>
+            </div>
+        </a>
+
+        <a href="/dashboard/kasir-cafe" class="module-card">
+            <div class="module-icon icon-teal">
+                <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Kasir Cafe</div>
+                <div class="module-desc">Mode kasir FnB</div>
+            </div>
+        </a>
+
+        <a href="/dashboard/kasir" class="module-card">
+            <div class="module-icon icon-red">
+                <i class="fa-solid fa-cash-register"></i>
+            </div>
+            <div class="module-text">
+                <div class="module-title">Kasir Retail</div>
+                <div class="module-desc">Mode kasir POS Cepat</div>
+            </div>
+        </a>
+
+    </div>
+
+</div>
 @endsection
-    
-<!-- JS-->
+
 @section('js')
+    <script src="{{ asset('js/dashboard/home.js') }}"></script>
     <script src="{{ asset('js/dashboard/main.js') }}"></script>
 @endsection
