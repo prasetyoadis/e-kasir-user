@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const roleEl = document.getElementById("userRoleDisplay");
     if (roleEl) {
         // Format Role: huruf pertama besar (misal: "owner" -> "Owner")
-        const roleName = user.role
-            ? user.role.charAt(0).toUpperCase() + user.role.slice(1)
+        const roleName = user.roles[0]
+            ? user.roles[0].slug.charAt(0).toUpperCase() + user.roles[0].slug.slice(1)
             : "Staff";
         roleEl.innerText = roleName;
     }
@@ -43,4 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (headerProfileName) headerProfileName.innerText = user.name;
     if (headerProfileRole) headerProfileRole.innerText = user.role || "Admin";
+
+    const validToSub = new Date(user.subscriptions[0].valid_to);
+    const expireSub = new Intl.DateTimeFormat('id-ID', {
+        dateStyle: "long",
+        timeStyle: "short",
+    }).format(validToSub);
+
+    const subscriptionTime = document.querySelector(".info-value");
+
+    subscriptionTime.innerText = expireSub;
+
 });

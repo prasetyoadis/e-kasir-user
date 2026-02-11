@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     
         const resultResponse = await response.json();
         const dataUser = resultResponse.result.data;
+        
+        localStorage.setItem('user', JSON.stringify(dataUser));
     
         console.log('Loaded user:', dataUser);
     
@@ -38,11 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     
     } catch (err) {
-        document.getElementById('dashboard').innerHTML = `
-            <p style="color:red; font-size:2rem; text-align:center;">
-                ${err.message}
-            </p>
-        `;
+        console.log(err);
     }
 });
 

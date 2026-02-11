@@ -48,7 +48,7 @@ export async function loginUser(email, password) {
 
                 // simpan ke localStorage (simulasi login sukses)
                 localStorage.setItem('token', data.token.access_token);
-                localStorage.setItem('current_user', JSON.stringify(data.user));
+                localStorage.setItem('user', JSON.stringify(data.user));
                 localStorage.setItem('is_logged_in', 'true');
 
                 console.log('Login sukses:', data);
